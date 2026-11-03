@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+<meta name="description" content="Сайт о мелиоративных машинах."/>
+<meta name="keywords" content="бульдозеры, грейдеры, каналокопатели, кусторезы, рыхлители, скреперы, лопастевые насосы, поливные машины."/>
+<title>Грейдеры|Слайдер</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+<script>
+	jsHover = function() {
+	var hEls = document.getElementById("nav").getElementsByTagName("li");
+	for (var i=0, len=hEls.length; i<len; i++) {
+	hEls[i].onmouseover=function() { this.className+=" jshover"; }
+	hEls[i].onmouseout=function() { this.className=this.className.replace(" jshover", ""); }
+	}
+	}
+	if (window.attachEvent && navigator.userAgent.indexOf("Opera")==-1) window.attachEvent("onload", jsHover);
+</script>
+
+<style>
+  img { border: 1px solid #000 }
+ .pic { position: absolute; top: 2px; left: 155px;}
+
+</style>
+
+<script>
+
+ var pic = new Image();
+ var timer;
+ var first_pic = 100;
+ var second_pic = 0;
+ var sec = 0;
+ var currentPictureId = 0;
+ var pictures = new Array("gr01.jpg", "gr02.jpg", "gr03.jpg", "gr04.jpg", "gr05.jpg", "gr06.jpg",  "gr07.jpg", "gr08.jpg", "gr09.jpg", "gr10.jpg", "gr11.jpg", "gr12.jpg",  "gr13.jpg", "gr14.jpg", "gr15.jpg", "gr16.jpg", "gr17.jpg");
+ var total_pictures = pictures.length;
+ var slideshow_started = false;
+
+ var disabled_opacity = false;
+ var step_opacity = 1;
+ var step_time = 1;
+
+ var sleep_time = 3000;
+ function changePicture(pictureId) {
+    if (currentPictureId == pictureId || first_pic != 100) {
+        return false;
+    }
+    currentPictureId = pictureId;
+    pic = new Image();
+    pic.src = "img/Фотогалерея/Грейдеры/" + pictures[pictureId];
+    timer = setTimeout("checkLoading()", 3000);
+    document.getElementById("btnPrev").disabled = true;
+    document.getElementById("btnNext").disabled = true;
+ }  
+ function checkLoading() {
+    if (pic.complete == true) {
+         if (disabled_opacity == true) {
+            document.getElementById("before").src = pic.src;
+            dcument.getElementById("btnPrev").disabled = false;
+            document.getElementById("btnNext").disabled = false;
+            sleep(sleep_time);
+            if (slideshow_started == true) {
+               ShowNextImage();
+            }  
+         } else {
+            changeSlide();
+            document.getElementById("loading_text").innerHTML = "&nbsp;";
+            document.getElementById("after").src = pic.src;
+            timer = setTimeout("changeSlide()", step_time); 
+         }
+    } else {
+         timer = setTimeout("checkLoading()", 500); 
+         document.getElementById("loading_text").innerHTML = "Loading, please wait...";
+    }
+ }
+ function sleep(delay) {
+     var start = new Date().getTime();
+     while (new Date().getTime() < start + delay);
+ }
+ function changeSlide() {
+    first_pic = first_pic - step_opacity;
+    second_pic = second_pic + step_opacity;
+    document.getElementById("before_div").style.opacity = first_pic / 100;
+    document.getElementById("after_div").style.opacity = second_pic / 100;
+    document.getElementById("after_div").style.filter = "alpha(opacity=" + second_pic + ")";
+    document.getElementById("before_div").style.filter = "alpha(opacity=" + first_pic +")";
+    if (second_pic > 98) {
+       clearTimeout(timer);
+       document.getElementById("before").src = pic.src;
+       document.getElementById("before_div").style.opacity = 100;
+       document.getElementById("before_div").style.filter = "alpha(opacity=0)"; 
+       document.getElementById("after_div").style.opacity = 0;
+       document.getElementById("after_div").style.filter = "alpha(opacity=100)";
+       first_pic = 100;
+       second_pic = 0;    
+       document.getElementById("btnPrev").disabled = false;
+       document.getElementById("btnNext").disabled = false;
+       if (slideshow_started == true) {
+          ShowNextImage();
+       }      
+    } else {
+       timer = setTimeout("changeSlide()", step_time);
+    }
+ }
+
+ function ShowPreviousImage() {
+    var pictureId = (currentPictureId == 0) ? total_pictures - 1 : currentPictureId - 1;
+    changePicture(pictureId);
+ }
+ function ShowNextImage() {
+    var pictureId = (currentPictureId + 1 == total_pictures) ? 0 : currentPictureId + 1;
+    changePicture(pictureId);
+ }
+ function StartSlideShow() {
+    if (slideshow_started == false) {
+       slideshow_started = true;
+       document.getElementById("startSlideshow").value = "Остановить слайдшоу";
+       ShowNextImage();
+    } else {
+       slideshow_started = false;
+       document.getElementById("startSlideshow").value = "Старт слайдшоу";
+    }
+ }
+</script>
+</head>
+<body>
+<div id="container"> <!--осн. блок-->
+	<div id="header"> <!--шапка-->
+		
+	</div> <!-- конец шапки-->
+	<div id="nav"><!--меню-->
+		<ul>
+			<li><a href="index.html">Главная</a></li>
+			<li><a href="#">История</a>
+				<ul>
+					<li><a href="melioracija.html">мелиорация земель</a></li>
+					<li><a href="istorija1.html">экскаваторы</a></li>
+					<li><a href="istorija2.html">бульдозер</a></li>
+					<li><a href="istorija3.html">грейдер</a></li>
+					
+				</ul>
+			</li>
+			<li><a href="#">Фотогалерея</a>
+				<ul>
+					<li><a href="слайдер_skrep.html">скреперы</a></li>
+					<li><a href="слайдер_rush.html">рыхлители</a></li>
+					<li><a href="слайдер_plan.html">планировщиики</a></li>
+					<li><a href="слайдер_buld.html">бульдозеры</a></li>
+					<li><a href="слайдер_gred.html">грейдеры</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Документация</a>
+				<ul>
+					<li><a href="zak.html">закон о мелиорации</a></li>
+					<li><a href="degrad.html">деградация земель</a></li>
+					<li><a href="ochr.html">охрана труда</a></li>
+					<li><a href="inst.html">инструкции</a></li>
+					<li><a href="metod1.html">методика обучения</a></li>
+					<li><a href="metod2.html">педтехнологии</a></li>
+					<li><a href="metod3.html">практические занятия</a></li>
+				
+				</ul>
+			</li>
+			<li><a href="#">Видео</a>
+				<ul>
+					<li><a href="Видео/мелиорация.html">Мелиорация</a></li>
+					<li><a href="Видео/бульдозер.html">Бульдозер</a></li>
+					<li><a href="Видео/косилки.html">Косилки на экскаватор</a></a></li>
+					<li><a href="Видео/рыхлитель.html">Рыхлитель</a></li>
+					<li><a href="Видео/автогрейдер.html">Автогрейдер</a></li>
+					<li><a href="Видео/скрепер.html">Скрепер</a></li>
+					<li><a href="Видео/земляные работы.html">Земляные работы</a></li>
+					
+				</ul>
+			</li>	
+			<li><a href="#">Блок контроля</a>
+				<ul>
+					<li><a href="kontw.html">Вопрсы для самопроверки</a></li>
+					<li><a href="kontw1.html">Контрольные вопросы</a></li>
+					<li><a href="#"><a href="Программа MY TEST/MyTestStudent.exe">Тест</a></a></li>
+				</ul>
+			</li>
+			
+			<li><a href="karta.html">Карта ЭОР</a></li>
+		</ul>
+	</div><!-- конец меню-->
+	
+	<div align="center" class="sladt">ГРЕЙДЕРЫ</div>
+
+
+<div class="slad">
+		<div id="after_div" class="pic"> <img id="after" src="" width="650" height="450"> </div> 
+		<div id="before_div" class="pic"><img id="before" src= "img/Фотогалерея/Грейдеры/gr01.jpg" width="650" height="450"></center></div>
+		<div id="loading_text" align="center">&nbsp;</div>
+
+		<div class="knop">
+      		<input type="button" value="Назад" id="btnPrev" onclick="ShowPreviousImage()"> 
+      		<input type="button" value="Старт слайдшоу" id="startSlideshow" onclick="StartSlideShow()">
+      		<input type="button" value="Вперед" id="btnNext" onclick="ShowNextImage()">
+		</div>
+</div>	
+
+<div class="clearfloat"></div>
+<div id="footer">
+<p><a href="index.html">Главная</a> |<a href="cont.html"> Контакты</a> | <a href="karta.html">Карта ЭОР</a>| </p>
+<p>&copy; Пинск, 2015-2016 |Все авторские права защищены!|</p>
+</div>
+
+
+
+	
+	
+	
+	
+
+</div> <!--конец осн. блока-->
+</body>
+</html>

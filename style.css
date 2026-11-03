@@ -1,0 +1,424 @@
+
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+body {
+	background: url(img/pap2.gif);
+	padding: 0.5% 0 0;
+	color:#333;
+	font-family: Arial, Helvetica, sans-serif;
+	}
+p {
+	font-size: 12px;
+	color: Black;	
+	line-height: 1.5;
+	text-align: justify;
+	text-indent: 25px;
+}
+
+#container {
+	background: #fff;
+	width: 960px;
+	margin: 0 auto;
+	border : 1px solid #999;
+	
+}
+#header {
+	width: 960px;
+	height:180px;
+	background-image: url(img/банер.gif);
+}
+
+/*меню*/
+#nav{
+	margin-left: 4px;
+	color: #f00;
+	font-size: 90%;
+	font-weight: bold;
+	line-height:: 1.2px;
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+#nav ul{
+	width: 100%;
+	text-align: center;
+	list-style-type: none;
+}
+		
+#nav ul li{
+	float:left;
+	height: 20px;
+	width:136px;
+	text-align:center;
+	background: #B6B66D;
+	position:relative;
+	padding-top: 2px;
+	padding-bottom: 4px;
+}
+		
+#nav li ul{
+	list-style:none;
+	width:150px;
+	display:none;
+	position:absolute;
+	left:0;
+	top:20px;
+}
+	#nav li ul li{
+	float:none;
+	height: auto;
+	width:150px;
+	font-weight: lighter;
+	text-align: center;
+	background: #B6B66D;
+	z-index:2;
+}
+#nav li a{
+	width: 120px;
+	color: Maroon;
+	text-decoration: none;
+}
+
+#nav li a{
+	width:136px;
+	color: Maroon;
+	text-decoration: none;
+}
+#nav li:hover ul, #nav li.jshover ul{
+	display:block;  
+}
+#nav li:hover, #nav li.jshover{
+	background: #F5F5DC;
+}
+/*слайдер*/
+.slad {
+	width: 960px;
+	height:500px;
+	position: relative;
+	z-index:1;
+}
+
+.knop {
+	position: absolute; 
+	top: 470px; 
+	center: 20px; 
+	left: 360px;
+}
+
+.sladt {
+	font-size: larger;
+	font-weight: bold;
+	margin-top :35px;
+	margin-bottom:5px;
+}
+
+/*главная*/
+#content {
+	margin: 0 20px;
+	padding-top: 10px;
+}
+
+#block1 {
+	width: 640px;
+	color: Black;
+	margin: 10px 0;
+	float: left;
+}
+#block1 p {
+	text-align: justify;
+	text-indent: 1.5em;
+	}
+#spic {
+	background-color: #FFFFCC;
+}
+#spic ul {
+	margin: 5px;
+}
+
+#spic li {
+	margin: 0 15px;
+	font-size: 12px;
+	line-height: 1.5;
+	text-align: justify;
+	
+}
+ p  img{
+	float: left;
+	width: 356px;
+	height: 267px;
+	}
+.col  p img {
+	float: left;
+	width: 330px;
+	margin-right: 5px;
+	}
+
+#block2 {
+	width: 270px;
+	color: #006400;
+	margin: 10px 5px;
+	float: right;
+}
+.post {
+	height: 100px;
+	background: #EFEFC7;
+	margin-bottom: 7px;
+}
+.entry  img  {
+	width: 110px;
+	height: 80px;
+	float: left;
+	padding: 10 5px;
+}
+.sod p {
+	text-transform: capitalize;
+	font-size: 14px;
+	letter-spacing: 1.5px;
+	margin-left : 125px;
+	padding: 10 3px;
+	font-weight: bold;
+	line-height: normal;
+	text-align: right;
+	padding-top: 10%;
+
+}
+.sod p a {
+	text-decoration: none;
+}
+
+/*содержание*/
+#block3 {
+float : left;
+}
+	
+#block4 {
+	float : right;
+} 
+
+.post1 {
+	padding: 0 7px;
+	width: 440px;
+	
+}
+
+.post1 p {
+	text-align: justify;
+	text-indent: 25px;
+}
+.post1 img {
+	margin-top: 10px;
+}
+
+.opred {
+	color: Green;
+	letter-spacing : 3px;
+	font-weight : bold;
+	font-size : 14px;
+}
+
+h4 {
+	padding : 2px;
+	margin-top :15px;
+	margin-bottom:5px;
+	font-size: large;
+	text-decoration: none;
+}
+
+.section h4 span{
+	padding:2px 5px;
+	background: url(img/фон02.jpg);
+}
+
+.section h4 a{
+	text-decoration : none;
+	color: #4169E1;
+}
+.section h4 a:hover {
+	color: #89A3ED;
+}
+.section h4 a:active {
+	color: #FF4500;
+}
+
+h3 {
+	margin-top: 5px;
+	color: #FF8E64;
+	text-transform: capitalize;
+	display : block;
+	background:#665;
+	text-align: center;
+}
+	
+h3 a { 
+ 	color: Red;
+	text-decoration : none;
+}
+h3 a:hover {
+	color: #FF956C;
+}
+
+ .img1 img{
+	float: right;
+	height: 150px;
+	width: 230px;
+	margin: 5px;
+
+}
+
+.more-link{
+	float: right;
+	display: block;
+	padding: 5px;
+	background:#797979;
+	color: #fff;
+	text-decoration:none;
+	font-size: 12px;
+	margin-bottom : 5px;
+}
+
+.more-link:hover {
+	background: #949393;
+	color: #ccc;
+}
+/*содержание1*/
+#block5 {
+	float : left;
+	width: 440px;
+	margin-top: 10px;
+}
+.techn img{
+	width: 370px;
+	height: 210px;
+}
+ 
+iframe{
+	background: url(img/фон03.jpg);
+	border : none;/* убираем рамку*/
+	width : 350px;
+	height: 210px;
+
+}
+.iframe p {
+font-size: 14px;
+font-style: oblique;
+}
+	
+#block6 {
+	float : right;
+	width: 440px;
+}
+
+.klas {
+	letter-spacing :2px;	
+}
+ .char p {
+	text-indent: 25px;
+	text-align: justify;
+}
+.clear {
+	clear: both;
+}
+/*подвал*/
+.clearfloat {
+	clear: both;
+	padding-top: 10px;
+}
+#footer {
+	background: #665;
+	color: #fff;
+	font-size: 70%;
+	padding: 5px;
+}
+#footer a {
+	color: #ff0;
+}
+#footer a:hover {
+	color: #f00;
+}
+#footer p {
+	padding: 2px;
+	text-align: center;
+}
+.kont {
+padding-top:10px;
+margin-top: 10px;
+margin-bottom: 15px;
+
+}
+
+#block7 {
+	width: 505px;
+	color: Black;
+	margin: 10px 0;
+	float: left;
+}
+#block8{
+	width: 385px;
+	color: #006400;
+	margin: 10px 10px;
+	float: right;
+	}	
+	.mel p img {
+	float: left;
+	margin: 5px;
+	}
+
+.iframe1 {
+padding-top: 10px;
+}
+
+.glav {
+	margin-bottom: 20px;
+}
+
+p iframe{
+	width: 650px;
+	height:350px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.fon{
+background: url(img/04.jpg);
+
+}
+h2{
+	color: #B6B66D
+}
+
+.navig{
+	margin-left: 170px;
+	color: Black;
+	font-size: 90%;
+	font-weight: bold;
+	line-height:: 1.2px;
+	margin-bottom: 5px;
+	
+}
+.navig  li a{
+	text-decoration: none;
+}
+.navig ul  li ul {
+	margin-left: 50px;
+	font-weight: normal;
+	
+	
+}
+.section h3{
+	margin-top: 20px;
+}
+#content ol li{
+	background: #EDEDDC;
+}
+.spic ol {
+	padding-left:75px;
+	font-size: small;
+}
+.ris p img{
+	width: 200px;
+	height: 142px;
+	margin-right: 7px;
+}
